@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js"></script>
+    <title>Data Lovers</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mali&family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/7e5b2d153f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header id="header-Master">
+      <nav class="nav">
+        <img
+          src="./img/IconoHeader.jpg"
+          alt="logo-Studio-Ghibli"
+          id="iconoHeader"
+          width="180px"
+        />
+        <button class="nav-toggle"><i class="fas fa-bars"></i></button>
+        <ul class="nav-menu">
+          <li class="nav-menu-item">
+            <a href="index.html" class="nav-menu-link nav-link">INICIO</a>
+          </li>
+          <li class="nav-menu-item">
+            <a id="peliculas_menu" class="nav-menu-link nav-link">PELICULAS</a>
+          </li>
+          <li class="nav-menu-item">
+            <a id="personajes_menu" class="nav-menu-link nav-link"
+              >PERSONAJES</a
+            >
+          </li>
+          <li class="nav-menu-item">
+            <li class="nav-menu-item"><a id="directores" class="nav-menu-link nav-link">DIRECTORES</a>
+              <ul id ="listaDirectores" class="listaDirectores">
+                <li id ="dir1" class="submenuDirector_items"><a class="submenuDirector submenuDir">HAYOA MIYAZAKI</a></li>
+                <li id ="dir2" class="submenuDirector_items"><a class="submenuDirector submenuDir">ISAO TAKAHADA</a></li>
+                <li id ="dir3" class="submenuDirector_items"><a class="submenuDirector submenuDir">TOMOMI MOCHIZUKI</a></li>
+                <li id ="dir4" class="submenuDirector_items"><a class="submenuDirector submenuDir">YOSHIFUMI KONDO</a></li>
+                <li id ="dir5" class="submenuDirector_items"><a class="submenuDirector submenuDir">HIROYUKI MORITA</a></li>
+                <li id ="dir6" class="submenuDirector_items"><a class="submenuDirector submenuDir">GORO MIYAZAKI</a></li>
+              </ul>
+            </li>
+          </li>  
+          <li class="nav-menu-item">
+            <a id="locaciones" class="nav-menu-link nav-link">LOCACIONES</a>
+          </li>
+          <li class="nav-menu-item">
+            <a id="vehiculos" class="nav-menu-link nav-link">VEHICULOS</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="cabecera" class="cabecera">
+      <div class="div_slider">
+        <h2 class="studio">STUDIO GHIBLI</h2>
+        <i
+          ><h3 class="subtitulo">
+            El Estudio que crea magia en cada historia.
+          </h3></i
+        >
+        <i
+          ><h3 class="subtitulo">
+            Con 5 películas nominadas a los Premios Oscar.
+          </h3></i
+        >
+      </div>
+      <div class="div_slider dragon">
+        <img class="dragon" src="./img/dragon.png" width="700" height="560" alt="Haku" />
+      </div>
+    </div>
+
+    <section id="Principal" class="back-principal">
+      <div id="barraBusqueda" class="barraBusqueda">
+        <div class="filtersFather" id="filtersPrincipal">
+          <label for="filterGender">GENERO:  </label>
+            <select id="filterGender" class="filters">
+              <option value="empty" disabled selected>Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="NA">NA</option>
+              <option value="Unknown (Possible Male)">Unknown</option>
+            </select>
+  
+          <label for="filterSpecie">ESPECIE:  </label>
+            <select id="filterSpecie" class="filters">
+              <option value="empty" disabled selected>Specie</option>
+              <option value="Bird">Bird</option>
+              <option value="Borrower">Borrower</option>
+              <option value="Cat">Cat</option>
+              <option value="Deity">Deity</option>
+              <option value="Demon">Demon</option>
+              <option value="Deity, Dragon">Dragon</option>
+              <option value="Dog">Dog</option>
+              <option value="Fish/Human">Fish/Human</option>
+              <option value="Human">Human</option>
+              <option value="Raccoon Dog">Raccoon Dog</option>
+              <option value="Red elk">Red elk</option>
+              <option value="Spirit">Spirit</option>
+              <option value="Spirit of The White Fox">Spirit of The White Fox</option>
+              <option value="Totoro">Totoro</option>
+              <option value="unknown">Unknown</option>
+              <option value="Witch">Witch</option>
+              <option value="Wizard">Wizard</option>
+              <option value="Wolf">Wolf</option>
+            </select>
+        </div>
+        <div id="botonesOrdenar">
+          <button id="aZ" class="btnNavegar">A - Z</button>
+          <button id="zA" class="btnNavegar">Z - A</button>
+          <button id="antigua" class="btnNavegar">ANTIGUAS PRIMERO</button>
+          <button id="reciente" class="btnNavegar">RECIENTES PRIMERO</button>
+        </div>
+        <div id="div_buscador">
+          <input
+            type="text"
+            id="inputBuscar"
+            placeholder="Películas, Personajes, Directores y Más"
+          />
+          <button id="btnBuscar">
+            <img src="img/lupa.png" alt="lupaBusqueda" id="lupaBusqueda" />
+          </button>
+        </div>
+      </div>
+      <div class="modalPeople" id="modalP">
+        <div class="contenidoP">
+          <span class="close">&times;</span>
+          <h3 class="titulomodal">NOMBRE</h3>
+          <h2 id="nombre" class="textosmodal"></h2>
+          <h3 class="titulomodal">GÉNERO</h3>
+          <h2 id="genero" class="textosmodal"></h2>
+          <h3 class="titulomodal">EDAD</h3>
+          <h2 id="edad" class="textosmodal"></h2>
+          <h3 class="titulomodal">COLOR DE OJOS</h3>
+          <h2 id="color_ojos" class="textosmodal"></h2>
+          <h3 class="titulomodal">COLOR DE CABELLO</h3>
+          <h2 id="color_cabello" class="textosmodal"></h2>
+          <h3 class="titulomodal">ESPECIE</h3>
+          <h2 id="especie" class="textosmodal"></h2>
+        </div>
+      </div>
+
+      <section id="paginaPrincipal" class="secciones">
+        <section id="contenedorCarrusel">
+          <section id="carruselPeliculas" class="carruselPeliculas"></section>
+          <button id="flechaIzquierda" class="flechaIzquierda">
+            <i class="fa fa-angle-left"></i>
+          </button>
+          <button id="flechaDerecha" class="flechaDerecha">
+            <i class="fa fa-angle-right"></i>
+          </button>
+        </section>
+        <section id="topTres">
+          <div id="txtFilmsAclamados">PELICULAS ACLAMADAS</div>
+          <section id="bestFilms"></section>
+        </section>
+      </section>
+
+      <section id="paginaDirectores" class="paginaDirectores">
+      </section>
+
+      <section id="paginaLocaciones" class="paginaLocaciones">
+      </section>
+
+      <section id="paginaVehiculos" class="paginaVehiculos">
+      </section>
+
+      
+      <section id="Peliculas">
+        <div id="tituloPelicula"></div>
+        <div id="contenedorPelicula">
+          <div id="posterPelicula"></div>
+          <div class="bloque_descripciones">
+            <div id="DescripcionPelicula"></div>
+            <div id="infoRelacionada_Individual">
+              <div id="director_Individual" class="infoRelacionada"></div>
+              <div id="productor_Individual" class="infoRelacionada"></div>
+              <div id="añoLanzamiento_Individual" class="infoRelacionada"></div>
+              <div id="ranking_Individual" class="infoRelacionada"></div>
+            </div>
+          </div>
+        </div>
+        <div id="carruselPersonajes">
+          <h3 class="titulos">Personajes Relacionados</h3>
+          <div id="carruselPers_Relacionados"></div>
+        </div>
+      </section>
+    </section>
+    <footer id="foother-Master">
+      <h6>© 2020 Studios Ghibli Project OP, Todos los derechos reservados.</h6>
+    </footer>
+
+    <script src="main.js" type="module"></script>
+  </body>
+</html>
