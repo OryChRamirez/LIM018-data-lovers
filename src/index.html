@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js"></script>
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
     <link
@@ -55,6 +56,9 @@
           <li class="nav-menu-item">
             <a id="locaciones" class="nav-menu-link nav-link">LOCACIONES</a>
           </li>
+          <li class="nav-menu-item">
+            <a id="vehiculos" class="nav-menu-link nav-link">VEHICULOS</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -74,12 +78,45 @@
         >
       </div>
       <div class="div_slider dragon">
-        <img src="./img/dragon.png" width="500" height="500" alt="Haku" />
+        <img class="dragon" src="./img/dragon.png" width="700" height="560" alt="Haku" />
       </div>
     </div>
 
     <section id="Principal" class="back-principal">
-      <div class="barraBusqueda">
+      <div id="barraBusqueda" class="barraBusqueda">
+        <div class="filtersFather" id="filtersPrincipal">
+          <label for="filterGender">GENERO:  </label>
+            <select id="filterGender" class="filters">
+              <option value="empty" disabled selected>Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="NA">NA</option>
+              <option value="Unknown (Possible Male)">Unknown</option>
+            </select>
+  
+          <label for="filterSpecie">ESPECIE:  </label>
+            <select id="filterSpecie" class="filters">
+              <option value="empty" disabled selected>Specie</option>
+              <option value="Bird">Bird</option>
+              <option value="Borrower">Borrower</option>
+              <option value="Cat">Cat</option>
+              <option value="Deity">Deity</option>
+              <option value="Demon">Demon</option>
+              <option value="Deity, Dragon">Dragon</option>
+              <option value="Dog">Dog</option>
+              <option value="Fish/Human">Fish/Human</option>
+              <option value="Human">Human</option>
+              <option value="Raccoon Dog">Raccoon Dog</option>
+              <option value="Red elk">Red elk</option>
+              <option value="Spirit">Spirit</option>
+              <option value="Spirit of The White Fox">Spirit of The White Fox</option>
+              <option value="Totoro">Totoro</option>
+              <option value="unknown">Unknown</option>
+              <option value="Witch">Witch</option>
+              <option value="Wizard">Wizard</option>
+              <option value="Wolf">Wolf</option>
+            </select>
+        </div>
         <div id="botonesOrdenar">
           <button id="aZ" class="btnNavegar">A - Z</button>
           <button id="zA" class="btnNavegar">Z - A</button>
@@ -95,6 +132,23 @@
           <button id="btnBuscar">
             <img src="img/lupa.png" alt="lupaBusqueda" id="lupaBusqueda" />
           </button>
+        </div>
+      </div>
+      <div class="modalPeople" id="modalP">
+        <div class="contenidoP">
+          <span class="close">&times;</span>
+          <h3 class="titulomodal">NOMBRE</h3>
+          <h2 id="nombre" class="textosmodal"></h2>
+          <h3 class="titulomodal">GÉNERO</h3>
+          <h2 id="genero" class="textosmodal"></h2>
+          <h3 class="titulomodal">EDAD</h3>
+          <h2 id="edad" class="textosmodal"></h2>
+          <h3 class="titulomodal">COLOR DE OJOS</h3>
+          <h2 id="color_ojos" class="textosmodal"></h2>
+          <h3 class="titulomodal">COLOR DE CABELLO</h3>
+          <h2 id="color_cabello" class="textosmodal"></h2>
+          <h3 class="titulomodal">ESPECIE</h3>
+          <h2 id="especie" class="textosmodal"></h2>
         </div>
       </div>
 
@@ -114,26 +168,18 @@
         </section>
       </section>
 
-      <section id="paginaDirectores">
-        <div id="nombreDirectores__paginaDirectores" class="titulos">NOMBRE APELLIDO
-        </div>
-        <div id="contenedorGlobalDirectores" class="contenedorGlobalDirectores">
-          <div id="imgDirector" class="imgDirector"></div>
-          <div id="descriptionDirector" class="descriptionDirector"></div>
-          <div>
-            <div class="relacioandasDirectores titulos" id="relacioandasDirectores"></div>
-            <div class="contRelacionadasDirectores"></div>
-          </div>  
-        </div>
+      <section id="paginaDirectores" class="paginaDirectores">
       </section>
 
       <section id="paginaLocaciones" class="paginaLocaciones">
+      </section>
 
+      <section id="paginaVehiculos" class="paginaVehiculos">
       </section>
 
       
       <section id="Peliculas">
-        <div id="tituloPelicula" class="titulos">TITULO DE LA PELICULA</div>
+        <div id="tituloPelicula"></div>
         <div id="contenedorPelicula">
           <div id="posterPelicula"></div>
           <div class="bloque_descripciones">
